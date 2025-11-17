@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    
+</head>
+<body>
+    <h1>Refresh to get a new Joke   :-)</h1>
+    <div class="container">
+        <% if(locals.joke){ %>
+            Joke:   <%= joke %>
+        <% } %>
+
+        <% if(locals.first){ %>
+            Setup: <%= first %>
+        <% } %>
+            <br/>
+        <% if(locals.second){ %>
+            Delivery: <%= second %>
+        <% } %>
+        
+    </div>
+
+    <div class="buttons">
+
+        <form action="/" id="form" class="form" method="POST">
+            <select name="type" class="my-button">
+              <option value="" selected>Choose a Type</option>
+                <option value="single">Single</option>
+                <option value="twopart">Two Part</option>
+            </select>
+
+            <select name="category" class="my-button">
+              <option value="Any">Choose a category</option>
+              <option value="Programming">Programming</option>
+              <option value="Misc">Misc</option>
+              <option value="Dark">Dark</option>
+              <option value="Pun">Pun</option>
+              <option value="Christmas">Christmas</option>
+              <option value="Spooky">Spooky</option>
+            </select>
+            <button type="submit" class="my-button">Go</button>
+        </form>
+    </div>
+</body>
+</html>
